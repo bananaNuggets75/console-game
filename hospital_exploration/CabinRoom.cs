@@ -20,6 +20,7 @@ class CabinRoom : Room
                 Console.WriteLine("They were not at all violent, but as everyone knows by now, the rabbit folk do not like impolite people.");
                 Console.WriteLine("They caught up to you and feasted on your remains.");
                 Console.WriteLine("GAME OVER");
+                Console.ReadLine();
                 break;
             case "B":
                 Console.WriteLine("You sit down waiting for dinner, and they give you food. It smells odd.");
@@ -38,7 +39,10 @@ class CabinRoom : Room
                         Console.ReadLine();
                         break;
                     case "B":
-                        game.ChangeRoom(new ContinueWalkingRoom(game));
+                        Console.WriteLine("Too bad. Never trust anyone, but you will die either way stupid.");
+                        Console.WriteLine("The second door is absolute massacre. Curiosity kills dumb bitch.");
+                        Console.WriteLine("GAME OVER");
+                        Console.ReadLine();
                         break;
                     default:
                         Console.WriteLine("Invalid choice. Please enter A or B.");
