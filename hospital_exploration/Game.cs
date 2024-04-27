@@ -19,12 +19,24 @@ namespace hospital_escape
                 currentRoom = new HospitalRoom(this);
                 currentRoom.Enter();
 
-                Console.WriteLine("Do you want to play again? (yes/no)");
-                string playAgainChoice = Console.ReadLine()?.ToLower() ?? "";
+                bool InputValidation;
+                string playAgainChoice;
+
+                do
+                {
+                    Console.WriteLine("Do you want to play again? (yes/exit)");
+                    playAgainChoice = Console.ReadLine()?.ToLower() ?? "";
+                    InputValidation = playAgainChoice == "yes" || playAgainChoice == "exit";
+                    if (!InputValidation)
+                    {
+                        Console.WriteLine("Invalid input. Please enter 'yes' or 'exit'.");
+                    }
+                } while (!InputValidation);
+
                 playAgain = playAgainChoice == "yes";
             } while (playAgain);
 
-            Console.WriteLine("Thanks dumbass!");
+        Console.WriteLine("Thanks dumbass!");
         }
 
         public void ChangeRoom(Room newRoom)
