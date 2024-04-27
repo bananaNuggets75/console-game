@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/banananuggets/Projects/hospital_exploration/hospital_exploration/hospital_escape.csproj",
+      "projectUniqueName": "/Users/banananuggets/Projects/hospital_exploration/console-game/hospital_exploration/hospital_escape.csproj",
       "projectName": "hospital_escape",
-      "projectPath": "/Users/banananuggets/Projects/hospital_exploration/hospital_exploration/hospital_escape.csproj",
+      "projectPath": "/Users/banananuggets/Projects/hospital_exploration/console-game/hospital_exploration/hospital_escape.csproj",
       "packagesPath": "/Users/banananuggets/.nuget/packages/",
-      "outputPath": "/Users/banananuggets/Projects/hospital_exploration/hospital_exploration/obj/",
+      "outputPath": "/Users/banananuggets/Projects/hospital_exploration/console-game/hospital_exploration/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/banananuggets/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k6Qyv6rrzZnDKaErgX+lk7kHopPxHpiLTPPs1Fx8o0UuxAXPrkNVYMz4ueGLnVkX1Z8KKV/cGrjALTr07fknHQ==",
+  "dgSpecHash": "QN43YbUZIw3qArPBfuXvyvG/wuR07goTIagZBDC6hivG5Kl7UvbQUjiC5IkH/FmNVJoD3Yr5jANmn3UMPZggrQ==",
   "success": true,
-  "projectFilePath": "/Users/banananuggets/Projects/hospital_exploration/hospital_exploration/hospital_escape.csproj",
+  "projectFilePath": "/Users/banananuggets/Projects/hospital_exploration/console-game/hospital_exploration/hospital_escape.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
