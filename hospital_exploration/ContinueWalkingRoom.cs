@@ -1,7 +1,7 @@
 ﻿using System;
 using hospital_escape;
 
-class ContinueWalkingRoom : Room
+public class ContinueWalkingRoom : Room
 {
     public ContinueWalkingRoom(Game game) : base(game) { }
 

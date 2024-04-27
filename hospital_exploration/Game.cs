@@ -1,22 +1,36 @@
 ﻿using System;
 using hospital_escape;
 
-class Game
+namespace hospital_escape
 {
-    private Room currentRoom;
 
-    public void Start()
+    public class Game
     {
-        Console.WriteLine("Welcome to the Hospital Escape!");
-        Console.WriteLine("You wake up in the hospital with absolutely no memory of who you are or what happened.");
+        private Room currentRoom;
 
-        currentRoom = new HospitalRoom(this);
-        currentRoom.Enter();
-    }
+        public void Start()
+        {
+            bool playAgain;
+            do
+            {
+                Console.WriteLine("Welcome to Hospital Escape!");
+                Console.WriteLine("You wake up in the hospital with absolutely no memory of who you are or what happened.");
 
-    public void ChangeRoom(Room newRoom)
-    {
-        currentRoom = newRoom;
-        currentRoom.Enter();
+                currentRoom = new HospitalRoom(this);
+                currentRoom.Enter();
+
+                Console.WriteLine("Do you want to play again? (yes/no)");
+                string playAgainChoice = Console.ReadLine()?.ToLower() ?? "";
+                playAgain = playAgainChoice == "yes";
+            } while (playAgain);
+
+            Console.WriteLine("Thanks dumbass!");
+        }
+
+        public void ChangeRoom(Room newRoom)
+        {
+            currentRoom = newRoom;
+            currentRoom.Enter();
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using hospital_escape;
 
-class CabinRoom : Room
+public class CabinRoom : Room
 {
     public CabinRoom(Game game) : base(game) { }
 

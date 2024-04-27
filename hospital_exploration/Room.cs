@@ -1,14 +1,17 @@
 ﻿using System;
 using hospital_escape;
 
-abstract class Room
+namespace hospital_escape
 {
-    protected Game game;
-
-    public Room(Game game)
+    public abstract class Room
     {
-        this.game = game;
-    }
+        protected Game game;
 
-    public abstract void Enter();
+        public Room(Game game)
+        {
+            this.game = game;
+        }
+
+        public abstract void Enter();
+    }
 }
