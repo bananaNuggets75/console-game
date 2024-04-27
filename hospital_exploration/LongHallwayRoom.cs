@@ -19,9 +19,13 @@ class LongHallwayRoom : Room
                 game.ChangeRoom(new ContinueWalkingRoom(game));
                 break;
             case "B":
-                Console.WriteLine("After walking for what seems like hours, you finally find an exit. Congrats, you're free!");
-                Console.WriteLine("Congratualations!!");
+                Console.WriteLine("After walking for what seems like hours, you saw an Alien and you woke up!");
+                Console.WriteLine("Congratualations!! It was all a dream!");
                 Console.ReadLine();
+                break;
+            default:
+                Console.WriteLine("Invalid choice. Please enter A or B.");
+                game.ChangeRoom(this);
                 break;
         }
     }

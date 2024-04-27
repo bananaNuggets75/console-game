@@ -23,6 +23,10 @@ class StairsRoom : Room
                 Console.WriteLine("GAME OVER");
                 Console.ReadLine();
                 break;
+            default:
+                Console.WriteLine("Invalid choice. Please enter A or B.");
+                game.ChangeRoom(this);
+                break;
         }
     }
 }

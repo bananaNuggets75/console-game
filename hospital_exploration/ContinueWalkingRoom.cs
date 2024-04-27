@@ -26,6 +26,10 @@ class ContinueWalkingRoom : Room
                 Console.WriteLine("After walking into the third door, you realize there is nothing but a long hallway.");
                 game.ChangeRoom(new LongHallwayRoom(game));
                 break;
+            default:
+                Console.WriteLine("Invalid choice. Please enter 1, 2, or 3.");
+                game.ChangeRoom(this);
+                break;
         }
     }
 }

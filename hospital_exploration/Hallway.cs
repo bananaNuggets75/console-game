@@ -23,6 +23,10 @@ class Hallway : Room
             case "2":
                 game.ChangeRoom(new ContinueWalkingRoom(game));
                 break;
+            default:
+                Console.WriteLine("Invalid choice. Please enter 1 or 2.");
+                game.ChangeRoom(this);
+                break;
         }
     }
 }

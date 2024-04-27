@@ -23,6 +23,10 @@ class HospitalRoom : Room
             case "2":
                 game.ChangeRoom(new Hallway(game));
                 break;
+            default:
+                Console.WriteLine("Invalid choice. Please enter 1 or 2.");
+                game.ChangeRoom(this);
+                break;
         }
     }
 }

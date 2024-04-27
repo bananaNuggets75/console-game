@@ -24,6 +24,10 @@ class CheckSuppliesRoom : Room
             case "B":
                 game.ChangeRoom(new Hallway(game));
                 break;
+            default:
+                Console.WriteLine("Invalid choice. Please enter A or B.");
+                game.ChangeRoom(this);
+                break;
         }
     }
 }
