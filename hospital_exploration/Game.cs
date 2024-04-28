@@ -7,14 +7,15 @@ namespace hospital_escape
     public class Game
     {
         private Room currentRoom;
+        private Delay delayPrint = new Delay(50);
 
         public void Start()
         {
             bool playAgain;
             do
             {
-                Console.WriteLine("Welcome to Hospital Escape!");
-                Console.WriteLine("You wake up in the hospital with absolutely no memory of who you are or what happened.");
+                delayPrint.PrintWithDelay("Welcome to Hospital Escape! \n");
+                delayPrint.PrintWithDelay("You wake up in the hospital with absolutely no memory of who you are or what happened.");
 
                 currentRoom = new HospitalRoom(this);
                 currentRoom.Enter();
@@ -24,7 +25,7 @@ namespace hospital_escape
 
                 do
                 {
-                    Console.WriteLine("Do you want to play again? (yes/exit)");
+                    delayPrint.PrintWithDelay("Do you want to play again? (yes/exit)");
                     playAgainChoice = Console.ReadLine()?.ToLower() ?? "";
                     InputValidation = playAgainChoice == "yes" || playAgainChoice == "exit";
                     if (!InputValidation)
@@ -36,7 +37,7 @@ namespace hospital_escape
                 playAgain = playAgainChoice == "yes";
             } while (playAgain);
 
-        Console.WriteLine("Thanks dumbass!");
+            delayPrint.PrintWithDelay("Thanks dumbass!");
         }
 
         public void ChangeRoom(Room newRoom)
