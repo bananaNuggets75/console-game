@@ -6,11 +6,11 @@ namespace hospital_escape
     public class HospitalRoom : Room
     {
         public HospitalRoom(Game game) : base(game) { }
-        private Delay delayPrint = new Delay(70);
+        private Delay delayPrint = new Delay();
 
         public override void Enter()
         {
-            delayPrint.PrintWithDelay("What do you do? \n");
+            delayPrint.PrintWithDelay("What do you do? \n", 70);
             Console.WriteLine("1. Go back to sleep");
             Console.WriteLine("2. Explore");
 
@@ -19,8 +19,8 @@ namespace hospital_escape
             switch (choice)
             {
                 case "1":
-                    delayPrint.PrintWithDelay("Boring human. You could've explored the hospital and had fun. \n");
-                    delayPrint.PrintWithDelay("GAME OVER");
+                    delayPrint.PrintWithDelay("Boring human. You could've explored the hospital and had fun. \n", 70);
+                    delayPrint.PrintWithDelay("GAME OVER", 70);
                     Console.ReadLine();
                     break;
                 case "2":

@@ -5,14 +5,8 @@ namespace hospital_escape
 {
     public class Delay
     {
-        private int delayMilliseconds;
-
-        public Delay(int delayMilliseconds)
-        {
-            this.delayMilliseconds = delayMilliseconds;
-        }
-
-        public void PrintWithDelay(string text)
+        
+        public void PrintWithDelay(string text, int delayMilliseconds)
         {
             foreach (char c in text)
             {
