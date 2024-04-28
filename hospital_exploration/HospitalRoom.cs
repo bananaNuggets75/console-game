@@ -19,8 +19,8 @@ namespace hospital_escape
             switch (choice)
             {
                 case "1":
-                    delayPrint.PrintWithDelay("Boring human. You could've explored the hospital and had fun. \n", 70);
-                    delayPrint.PrintWithDelay("GAME OVER", 70);
+                    delayPrint.PrintWithDelay("Boring human. You could've explored the hospital and had fun. \n", 50);
+                    delayPrint.PrintWithDelay("GAME OVER", 80);
                     Console.ReadLine();
                     break;
                 case "2":
