@@ -4,25 +4,25 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="hospital_exploration/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="hospital_exploration/Game.cs">
     <Files>
       <File FileName="hospital_exploration/Program.cs" Line="14" Column="1" />
-      <File FileName="hospital_exploration/LongHallwayRoom.cs" Line="1" Column="1" />
-      <File FileName="hospital_exploration/RandomRoom.cs" Line="1" Column="1" />
-      <File FileName="hospital_exploration/Room.cs" Line="1" Column="1" />
-      <File FileName="hospital_exploration/StairsRoom.cs" Line="1" Column="1" />
-      <File FileName="hospital_exploration/HospitalRoom.cs" Line="1" Column="1" />
-      <File FileName="hospital_exploration/Hallway.cs" Line="1" Column="1" />
-      <File FileName="hospital_exploration/ContinueWalkingRoom.cs" Line="1" Column="1" />
-      <File FileName="hospital_exploration/CabinRoom.cs" Line="1" Column="1" />
+      <File FileName="hospital_exploration/LongHallwayRoom.cs" Line="29" Column="23" />
+      <File FileName="hospital_exploration/RandomRoom.cs" Line="28" Column="23" />
+      <File FileName="hospital_exploration/Room.cs" Line="4" Column="26" />
+      <File FileName="hospital_exploration/StairsRoom.cs" Line="29" Column="23" />
+      <File FileName="hospital_exploration/HospitalRoom.cs" Line="4" Column="26" />
+      <File FileName="hospital_exploration/Hallway.cs" Line="27" Column="64" />
+      <File FileName="hospital_exploration/ContinueWalkingRoom.cs" Line="4" Column="8" />
+      <File FileName="hospital_exploration/CabinRoom.cs" Line="4" Column="8" />
+      <File FileName="hospital_exploration/CheckSuppliesRoom.cs" Line="23" Column="23" />
+      <File FileName="hospital_exploration/Game.cs" Line="32" Column="81" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="hospital_exploration" expanded="True">
-            <Node name="hospital_escape" expanded="True">
-              <Node name="StairsRoom.cs" selected="True" />
-            </Node>
+            <Node name="hospital_escape" expanded="True" />
           </Node>
         </State>
       </Pad>
