@@ -7,7 +7,7 @@ namespace hospital_escape
     public class Game
     {
         private Room currentRoom;
-        private Delay delayPrint = new Delay(50);
+        private Delay delayPrint = new Delay(30);
 
         public void Start()
         {
