@@ -4,11 +4,12 @@ using hospital_escape;
 public class CabinRoom : Room
 {
     public CabinRoom(Game game) : base(game) { }
+    private Delay delayPrint = new Delay(50);
 
     public override void Enter()
     {
-        Console.WriteLine("You're about to enter the cabin, but before you walk in, you see a family full of people wearing rabbit masks.");
-        Console.WriteLine("What do you do?");
+        delayPrint.PrintWithDelay("You're about to enter the cabin, but before you walk in, you see a family full of people wearing rabbit masks. \n");
+        delayPrint.PrintWithDelay("What do you do? \n");
         Console.WriteLine("A. Run");
         Console.WriteLine("B. Approach them");
 
@@ -19,7 +20,7 @@ public class CabinRoom : Room
             case "A":
                 Console.WriteLine("They were not at all violent, but as everyone knows by now, the rabbit folk do not like impolite people.");
                 Console.WriteLine("They caught up to you and feasted on your remains.");
-                Console.WriteLine("GAME OVER");
+                delayPrint.PrintWithDelay("GAME OVER");
                 Console.ReadLine();
                 break;
             case "B":
@@ -35,13 +36,13 @@ public class CabinRoom : Room
                     case "A":
                         Console.WriteLine("You died after eating the food they gave you. It was human meat.");
                         Console.WriteLine("The second door wasn't the best choice.");
-                        Console.WriteLine("GAME OVER");
+                        delayPrint.PrintWithDelay("GAME OVER");
                         Console.ReadLine();
                         break;
                     case "B":
                         Console.WriteLine("Too bad. Never trust anyone, but you will die either way stupid.");
                         Console.WriteLine("The second door is absolute massacre. Curiosity kills dumb bitch.");
-                        Console.WriteLine("GAME OVER");
+                        delayPrint.PrintWithDelay("GAME OVER");
                         Console.ReadLine();
                         break;
                     default:

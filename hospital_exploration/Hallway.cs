@@ -5,11 +5,12 @@ using hospital_escape;
 class Hallway : Room
 {
     public Hallway(Game game) : base(game) { }
+    private Delay delayPrint = new Delay(50);
 
     public override void Enter()
     {
-        Console.WriteLine("You decided to explore. After leaving your hospital room, you immediately find a hallway.");
-        Console.WriteLine("What do you do?");
+        delayPrint.PrintWithDelay("You decided to explore. After leaving your hospital room, you immediately find a hallway. \n");
+        delayPrint.PrintWithDelay("What do you do? \n");
         Console.WriteLine("1. Enter a room");
         Console.WriteLine("2. Continue walking");
 

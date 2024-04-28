@@ -4,10 +4,11 @@ using hospital_escape;
 class StairsRoom : Room
 {
     public StairsRoom(Game game) : base(game) { }
+    private Delay delayPrint = new Delay(50);
 
     public override void Enter()
     {
-        Console.WriteLine("What do you do?");
+        delayPrint.PrintWithDelay("What do you do? \n");
         Console.WriteLine("A. Go back to the hallway");
         Console.WriteLine("B. Go down the stairs");
 
@@ -20,7 +21,7 @@ class StairsRoom : Room
                 break;
             case "B":
                 Console.WriteLine("You go down multiple staircases, but they seem never-ending. You're stuck there forever.");
-                Console.WriteLine("GAME OVER");
+                delayPrint.PrintWithDelay("GAME OVER");
                 Console.ReadLine();
                 break;
             default:

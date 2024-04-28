@@ -15,7 +15,7 @@ namespace hospital_escape
             do
             {
                 delayPrint.PrintWithDelay("Welcome to Hospital Escape! \n");
-                delayPrint.PrintWithDelay("You wake up in the hospital with absolutely no memory of who you are or what happened.");
+                delayPrint.PrintWithDelay("You wake up in the hospital with absolutely no memory of who you are or what happened. \n");
 
                 currentRoom = new HospitalRoom(this);
                 currentRoom.Enter();

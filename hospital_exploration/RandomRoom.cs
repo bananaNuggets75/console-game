@@ -4,11 +4,12 @@ using hospital_escape;
 class RandomRoom : Room
 {
     public RandomRoom(Game game) : base(game) { }
+    private Delay delayPrint = new Delay(50);
 
     public override void Enter()
     {
-        Console.WriteLine("You enter a random room. You see some supplies in the corner but nothing else too interesting.");
-        Console.WriteLine("What do you do?");
+        delayPrint.PrintWithDelay("You enter a random room. You see some supplies in the corner but nothing else too interesting. \n");
+        delayPrint.PrintWithDelay("What do you do? \n");
         Console.WriteLine("A. Leave the room and keep walking");
         Console.WriteLine("B. Check out the supplies");
 

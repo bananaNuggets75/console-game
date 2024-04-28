@@ -4,11 +4,12 @@ using hospital_escape;
 public class ContinueWalkingRoom : Room
 {
     public ContinueWalkingRoom(Game game) : base(game) { }
+    private Delay delayPrint = new Delay(50);
 
     public override void Enter()
     {
-        Console.WriteLine("You continue walking down the hallway.");
-        Console.WriteLine("You find three doors. Which door will you go through? (1, 2, or 3)");
+        delayPrint.PrintWithDelay("You continue walking down the hallway. \n");
+        delayPrint.PrintWithDelay("You find three doors. Which door will you go through? (1, 2, or 3) \n");
 
         string choice = Console.ReadLine();
 
