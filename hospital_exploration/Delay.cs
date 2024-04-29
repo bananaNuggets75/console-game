@@ -11,6 +11,10 @@ namespace hospital_escape
             foreach (char c in text)
             {
                 Console.Write(c);
+                if (Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Enter)
+                {
+                    break;
+                }
                 Thread.Sleep(delayMilliseconds);
             }
         }
