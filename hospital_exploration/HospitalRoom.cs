@@ -5,7 +5,7 @@ namespace hospital_escape
 {
     public class HospitalRoom : Room
     {
-        public HospitalRoom(Game game) : base(game) { }
+        public HospitalRoom(Game game) : base(game, hasKey: true) { }
         private Delay delayPrint = new Delay();
 
         public override void Enter()

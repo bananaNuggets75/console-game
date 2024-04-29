@@ -4,7 +4,7 @@ using hospital_escape;
 
 class Hallway : Room
 {
-    public Hallway(Game game) : base(game) { }
+    public Hallway(Game game) : base(game, hasKey: true) { }
     private Delay delayPrint = new Delay();
 
     public override void Enter()

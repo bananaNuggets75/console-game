@@ -18,8 +18,8 @@ namespace hospital_escape
             bool playAgain;
             do
             {
-                delayPrint.PrintWithDelay("Welcome to Hospital Escape!", 70);
-                delayPrint.PrintWithDelay("You wake up in the hospital with absolutely no memory of who you are or what happened.", 50);
+                delayPrint.PrintWithDelay("Welcome to Hospital Escape! \n", 70);
+                delayPrint.PrintWithDelay("You wake up in the hospital with absolutely no memory of who you are or what happened. \n", 50);
 
                 currentRoom = new HospitalRoom(this);
                 currentRoom.Enter();
@@ -34,7 +34,7 @@ namespace hospital_escape
                 string playAgainChoice;
                 do
                 {
-                    delayPrint.PrintWithDelay("Do you want to play again? (yes/exit)", 50);
+                    delayPrint.PrintWithDelay("Do you want to play again? (yes/exit) \n", 50);
                     playAgainChoice = Console.ReadLine()?.ToLower() ?? "";
                     inputValidation = playAgainChoice == "yes" || playAgainChoice == "exit";
                     if (!inputValidation)
