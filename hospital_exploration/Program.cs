@@ -8,6 +8,7 @@ namespace hospital_escape
         {
             Game game = new Game();
             game.Start();
+            game.Player.UseKey();
         }
     }
 }

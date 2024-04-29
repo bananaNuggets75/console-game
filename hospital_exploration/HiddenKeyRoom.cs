@@ -18,10 +18,11 @@ namespace hospital_escape
             switch (choice)
             {
                 case "A":
-                    // pass
+                    SearchRoom();
                     break;
                 case "B":
                     Console.WriteLine("You decide to leave the room.");
+                    game.ChangeRoom(new Hallway(game));
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
