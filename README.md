@@ -13,13 +13,13 @@ Hospital Escape is a text-based adventure game implemented in C# console applica
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/yourusername/hospital-escape.git
+    git clone https://github.com/yourusername/console-game.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd hospital-escape
+    cd console-game
     ```
 
 3. Build the project:
