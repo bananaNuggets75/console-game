@@ -10,19 +10,19 @@ namespace hospital_escape
         {
             HasKey = false;
         }
+
         public void UseKey()
         {
             if (HasKey)
             {
-                
                 Console.WriteLine("You use the key to unlock the door.");
             }
             else
             {
-                
                 Console.WriteLine("You don't have a key to use.");
             }
         }
     }
 }
+
 
