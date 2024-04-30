@@ -22,7 +22,7 @@ namespace hospital_escape
                     break;
                 case "B":
                     Console.WriteLine("You decide to leave the room.");
-                    game.ChangeRoom(new Hallway(game));
+                    game.ChangeRoom(new Hallway(game)); // undecided which room. also needs to add logic
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
