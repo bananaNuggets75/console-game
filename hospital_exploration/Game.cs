@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace hospital_escape
 {
@@ -6,7 +7,9 @@ namespace hospital_escape
     {
         private Room currentRoom;
         private Delay delayPrint = new Delay();
+        private HiddenScenario hiddenScenario = new HiddenScenario();
         public Player Player { get; set; }
+        private Player player;
 
         public Game()
         {
@@ -53,6 +56,12 @@ namespace hospital_escape
         {
             currentRoom = newRoom;
             currentRoom.Enter();
+        }
+
+        public void ExploreRoom()
+        {
+            hiddenScenario.TriggerHiddenScenario(Player);
+
         }
     }
 }
