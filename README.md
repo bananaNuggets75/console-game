@@ -42,3 +42,8 @@ Hospital Escape is a text-based adventure game implemented in C# console applica
 ## Contributing
 
 If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request. Thanksu.
+Would appreciate contributing an assets.
+
+## Future Plans
+- Develop the actual game with characters using Unity.
+- Improve storyline and game mechanics.
