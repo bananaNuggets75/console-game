@@ -99,5 +99,15 @@ namespace hospital_escape
                 Console.WriteLine($"Error loading game: {ex.Message}");
             }
         }
+
+        public void HandleSaveInput()
+        {
+            Console.WriteLine("Press 'S' to save the game.");
+            ConsoleKeyInfo keyInfo = Console.ReadKey();
+            if (keyInfo.Key == ConsoleKey.S)
+            {
+                SaveGame();
+            }
+        }
     }
 }
