@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Numerics;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -64,25 +63,40 @@ namespace hospital_escape
         public void ExploreRoom()
         {
             hiddenScenario.TriggerHiddenScenario(Player);
-
         }
+
         public void SaveGame()
         {
-            string gameStateJson = JsonConvert.SerializeObject(player);
-            File.WriteAllText(saveFilePath, gameStateJson);
-            Console.WriteLine("Game saved successfully.");
+            try
+            {
+                string gameStateJson = JsonConvert.SerializeObject(Player);
+                File.WriteAllText(saveFilePath, gameStateJson);
+                Console.WriteLine("Game saved successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving game: {ex.Message}");
+            }
         }
+
         public void LoadGame()
         {
-            if (File.Exists(saveFilePath))
+            try
             {
-                string gameStateJson = File.ReadAllText(saveFilePath);
-                player = JsonConvert.DeserializeObject<Player>(gameStateJson);
-                Console.WriteLine("Game loaded successfully.");
+                if (File.Exists(saveFilePath))
+                {
+                    string gameStateJson = File.ReadAllText(saveFilePath);
+                    Player = JsonConvert.DeserializeObject<Player>(gameStateJson);
+                    Console.WriteLine("Game loaded successfully.");
+                }
+                else
+                {
+                    Console.WriteLine("No saved game found.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("No saved game found.");
+                Console.WriteLine($"Error loading game: {ex.Message}");
             }
         }
     }
