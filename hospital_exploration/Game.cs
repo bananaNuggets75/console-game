@@ -20,6 +20,8 @@ namespace hospital_escape
 
         public void Start()
         {
+            Game game = new Game();
+            game.HandleSaveInput();
             bool playAgain;
             do
             {
@@ -33,6 +35,12 @@ namespace hospital_escape
                 {
                     currentRoom = new HiddenKeyRoom(this);
                     currentRoom.Enter();
+                }
+
+                if (ShouldSaveGame())
+                {
+                    SaveGame();
+                    break;
                 }
 
                 bool inputValidation;
@@ -108,6 +116,13 @@ namespace hospital_escape
             {
                 SaveGame();
             }
+        }
+
+        private bool ShouldSaveGame()
+        {
+            Console.WriteLine("Do you want to save the game? (yes/no)");
+            string input = Console.ReadLine()?.ToLower();
+            return input == "yes";
         }
     }
 }
