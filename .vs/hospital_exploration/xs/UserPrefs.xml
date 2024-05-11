@@ -1,33 +1,38 @@
 ﻿<Properties StartupConfiguration="{662B8FF6-96DA-4071-8F42-E74B15407A7B}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.hospital__escape PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="hospital_exploration/Game.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="hospital_exploration/HiddenScenario.cs">
     <Files>
-      <File FileName="hospital_exploration/Program.cs" Line="14" Column="1" />
+      <File FileName="hospital_exploration/Program.cs" Line="12" Column="58" />
       <File FileName="hospital_exploration/LongHallwayRoom.cs" Line="29" Column="23" />
-      <File FileName="hospital_exploration/RandomRoom.cs" Line="28" Column="23" />
-      <File FileName="hospital_exploration/Room.cs" Line="4" Column="26" />
-      <File FileName="hospital_exploration/StairsRoom.cs" Line="29" Column="23" />
+      <File FileName="hospital_exploration/RandomRoom.cs" />
+      <File FileName="hospital_exploration/Room.cs" />
+      <File FileName="hospital_exploration/StairsRoom.cs" />
       <File FileName="hospital_exploration/HospitalRoom.cs" Line="4" Column="26" />
-      <File FileName="hospital_exploration/Hallway.cs" Line="27" Column="64" />
-      <File FileName="hospital_exploration/ContinueWalkingRoom.cs" Line="4" Column="8" />
+      <File FileName="hospital_exploration/Hallway.cs" />
+      <File FileName="hospital_exploration/ContinueWalkingRoom.cs" />
       <File FileName="hospital_exploration/CabinRoom.cs" Line="4" Column="8" />
-      <File FileName="hospital_exploration/CheckSuppliesRoom.cs" Line="23" Column="23" />
-      <File FileName="hospital_exploration/Game.cs" Line="32" Column="81" />
+      <File FileName="hospital_exploration/CheckSuppliesRoom.cs" />
+      <File FileName="hospital_exploration/Game.cs" Line="32" Column="59" />
+      <File FileName="hospital_exploration/HiddenScenario.cs" Line="12" Column="42" />
+      <File FileName="hospital_exploration/Player.cs" Line="1" Column="1" />
+      <File FileName="hospital_exploration/HiddenKeyRoom.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="hospital_exploration" expanded="True">
-            <Node name="hospital_escape" expanded="True" />
+            <Node name="hospital_escape">
+              <Node name="HiddenScenario.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

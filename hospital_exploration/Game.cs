@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Numerics;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace hospital_escape
 {
@@ -10,6 +12,7 @@ namespace hospital_escape
         private HiddenScenario hiddenScenario = new HiddenScenario();
         public Player Player { get; set; }
         private Player player;
+        private string saveFilePath = "save.json";
 
         public Game()
         {
@@ -62,6 +65,12 @@ namespace hospital_escape
         {
             hiddenScenario.TriggerHiddenScenario(Player);
 
+        }
+        public void SaveGame()
+        {
+            string gameStateJson = JsonConvert.SerializeObject(player);
+            File.WriteAllText(saveFilePath, gameStateJson);
+            Console.WriteLine("Game saved successfully.");
         }
     }
 }

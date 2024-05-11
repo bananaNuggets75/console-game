@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/banananuggets/Projects/hospital_exploration/console-game/hospital_exploration/hospital_escape.csproj": {}
+    "/Users/banananuggets/Projects/console-game/hospital_exploration/hospital_escape.csproj": {}
   },
   "projects": {
-    "/Users/banananuggets/Projects/hospital_exploration/console-game/hospital_exploration/hospital_escape.csproj": {
+    "/Users/banananuggets/Projects/console-game/hospital_exploration/hospital_escape.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/banananuggets/Projects/hospital_exploration/console-game/hospital_exploration/hospital_escape.csproj",
+        "projectUniqueName": "/Users/banananuggets/Projects/console-game/hospital_exploration/hospital_escape.csproj",
         "projectName": "hospital_escape",
-        "projectPath": "/Users/banananuggets/Projects/hospital_exploration/console-game/hospital_exploration/hospital_escape.csproj",
+        "projectPath": "/Users/banananuggets/Projects/console-game/hospital_exploration/hospital_escape.csproj",
         "packagesPath": "/Users/banananuggets/.nuget/packages/",
-        "outputPath": "/Users/banananuggets/Projects/hospital_exploration/console-game/hospital_exploration/obj/",
+        "outputPath": "/Users/banananuggets/Projects/console-game/hospital_exploration/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/banananuggets/.nuget/NuGet/NuGet.Config"
@@ -38,6 +38,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -9,12 +9,14 @@ namespace hospital_escape
 
         public void TriggerHiddenScenario(Player player)
         {
-            int chance = random.Next(1, 10);
+            int chance = random.Next(1, 3);
 
-            if (player.HasKey && chance <= 98)
+            if (player.HasKey && chance <= 100)
             {
                 delayPrint.PrintWithDelay("You stumble upon a hidden room!", 50);
             }
         }
+
+
     }
 }
