@@ -72,5 +72,17 @@ namespace hospital_escape
             File.WriteAllText(saveFilePath, gameStateJson);
             Console.WriteLine("Game saved successfully.");
         }
-    }
+        public void LoadGame()
+        {
+            if (File.Exists(saveFilePath))
+            {
+                string gameStateJson = File.ReadAllText(saveFilePath);
+                player = JsonConvert.DeserializeObject<Player>(gameStateJson);
+                Console.WriteLine("Game loaded successfully.");
+            }
+            else
+            {
+                Console.WriteLine("No saved game found.");
+            }
+        }
 }
