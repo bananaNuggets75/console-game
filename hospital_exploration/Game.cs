@@ -10,7 +10,6 @@ namespace hospital_escape
         private Delay delayPrint = new Delay();
         private HiddenScenario hiddenScenario = new HiddenScenario();
         public Player Player { get; set; }
-        private Player player;
         private string saveFilePath = "save.json";
 
         public Game()
@@ -20,46 +19,19 @@ namespace hospital_escape
 
         public void Start()
         {
-            Game game = new Game();
-            game.HandleSaveInput();
-            bool playAgain;
-            do
+            LoadGame(); // Attempt to load a previous save
+
+            delayPrint.PrintWithDelay("Welcome to Hospital Escape! \n", 70);
+            delayPrint.PrintWithDelay("You wake up in the hospital with absolutely no memory of who you are or what happened. \n", 50);
+
+            currentRoom = new HospitalRoom(this);
+            currentRoom.Enter();
+
+            if (Player.HasKey)
             {
-                delayPrint.PrintWithDelay("Welcome to Hospital Escape! \n", 70);
-                delayPrint.PrintWithDelay("You wake up in the hospital with absolutely no memory of who you are or what happened. \n", 50);
-
-                currentRoom = new HospitalRoom(this);
+                currentRoom = new HiddenKeyRoom(this);
                 currentRoom.Enter();
-
-                if (Player.HasKey)
-                {
-                    currentRoom = new HiddenKeyRoom(this);
-                    currentRoom.Enter();
-                }
-
-                if (ShouldSaveGame())
-                {
-                    SaveGame();
-                    break;
-                }
-
-                bool inputValidation;
-                string playAgainChoice;
-                do
-                {
-                    delayPrint.PrintWithDelay("Do you want to play again? (yes/exit) \n", 50);
-                    playAgainChoice = Console.ReadLine()?.ToLower() ?? "";
-                    inputValidation = playAgainChoice == "yes" || playAgainChoice == "exit";
-                    if (!inputValidation)
-                    {
-                        Console.WriteLine("Invalid input. Please enter 'yes' or 'exit'.");
-                    }
-                } while (!inputValidation);
-
-                playAgain = playAgainChoice == "yes";
-            } while (playAgain);
-
-            delayPrint.PrintWithDelay("Thanks for playing!", 60);
+            }
         }
 
         public void ChangeRoom(Room newRoom)
@@ -108,21 +80,49 @@ namespace hospital_escape
             }
         }
 
-        public void HandleSaveInput()
-        {
-            Console.WriteLine("Press 'S' to save the game.");
-            ConsoleKeyInfo keyInfo = Console.ReadKey();
-            if (keyInfo.Key == ConsoleKey.S)
-            {
-                SaveGame();
-            }
-        }
-
         private bool ShouldSaveGame()
         {
-            Console.WriteLine("Do you want to save the game? (yes/no)");
-            string input = Console.ReadLine()?.ToLower();
-            return input == "yes";
+            Console.WriteLine("Press 'S' to save the game or any other key to continue.");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: true);
+            return keyInfo.Key == ConsoleKey.S;
+        }
+
+        // Main game loop
+        public void Play()
+        {
+            while (true)
+            {
+                Console.WriteLine("\nWhat do you want to do?");
+                Console.WriteLine("1. Go back to sleep");
+                Console.WriteLine("2. Explore");
+                Console.WriteLine("3. Save and exit");
+
+                string input = Console.ReadLine();
+
+                switch (input)
+                {
+                    case "1":
+                        delayPrint.PrintWithDelay("You decide to go back to sleep. Maybe this is all just a dream...\n", 50);
+                        return; // End the game loop
+
+                    case "2":
+                        ExploreRoom();
+                        break;
+
+                    case "3":
+                        if (ShouldSaveGame())
+                        {
+                            SaveGame();
+                            return; // Exit the game loop after saving
+                        }
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid choice. Please select a valid option.");
+                        break;
+                }
+            }
+            Console.WriteLine("Exiting the game...");
         }
     }
 }
