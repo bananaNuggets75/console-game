@@ -11,7 +11,6 @@ namespace hospital_escape
             Game game = new Game();
             game.Start();
             game.Play();
-            game.Player.UseKey();
             PlayerSaveInfo userInfo = PlayerSaveInfo.InputUserInfo();
             Console.WriteLine($"Name: {userInfo.Name}, Age: {userInfo.Age}");
         }

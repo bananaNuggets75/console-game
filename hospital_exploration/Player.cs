@@ -1,28 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace hospital_escape
 {
     public class Player
     {
+        public string Name { get; set; }
+        public int Age { get; set; }
         public bool HasKey { get; set; }
+        public List<string> Inventory { get; set; }
 
         public Player()
         {
-            HasKey = false;
+            Inventory = new List<string>();
         }
 
-        public void UseKey()
+        public void AddItem(string item)
         {
-            if (HasKey)
+            Inventory.Add(item);
+            Console.WriteLine($"{item} has been added to your inventory.");
+        }
+
+        public void ShowInventory()
+        {
+            Console.WriteLine("Your inventory contains:");
+            foreach (var item in Inventory)
             {
-                Console.WriteLine("You use the key to unlock the door.");
-            }
-            else
-            {
-                Console.WriteLine("You don't have a key to use.");
+                Console.WriteLine($"- {item}");
             }
         }
     }
 }
-
-

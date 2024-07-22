@@ -43,6 +43,7 @@ namespace hospital_escape
         public void ExploreRoom()
         {
             hiddenScenario.TriggerHiddenScenario(Player);
+            Player.AddItem("Key"); // Example of adding an item
         }
 
         public void SaveGame()
@@ -96,6 +97,7 @@ namespace hospital_escape
                 Console.WriteLine("1. Go back to sleep");
                 Console.WriteLine("2. Explore");
                 Console.WriteLine("3. Save and exit");
+                Console.WriteLine("4. Show Inventory");
 
                 string input = Console.ReadLine();
 
@@ -117,11 +119,17 @@ namespace hospital_escape
                         }
                         break;
 
+                    case "4":
+                        Player.ShowInventory();
+                        break;
+
                     default:
                         Console.WriteLine("Invalid choice. Please select a valid option.");
                         break;
                 }
             }
+
+            // Additional cleanup or closing logic if needed
             Console.WriteLine("Exiting the game...");
         }
     }
