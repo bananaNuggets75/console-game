@@ -5,8 +5,12 @@ namespace hospital_escape
 {
     public class HospitalRoom : Room
     {
-        public HospitalRoom(Game game) : base(game, hasKey: true) { }
         private Delay delayPrint = new Delay();
+
+        public HospitalRoom(Game game) : base(game, hasKey: true)
+        {
+            puzzle = new FindKeyPuzzle(); // Assign a puzzle to the room
+        }
 
         public override void Enter()
         {
@@ -24,12 +28,21 @@ namespace hospital_escape
                     Console.ReadLine();
                     break;
                 case "2":
-                    game.ChangeRoom(new Hallway(game));
+                    SearchRoom(); // Trigger search and puzzle solving
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Please enter 1 or 2.");
-                    game.ChangeRoom(this);
+                    Enter(); // Stay in the same room for another attempt
                     break;
+            }
+        }
+
+        public override void SearchRoom()
+        {
+            base.SearchRoom(); // Use the base class method which includes puzzle solving logic
+            if (game.Player.HasKey)
+            {
+                game.ChangeRoom(new Hallway(game)); // Move to the next room if the key is found
             }
         }
     }
