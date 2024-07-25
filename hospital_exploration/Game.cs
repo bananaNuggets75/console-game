@@ -43,7 +43,7 @@ namespace hospital_escape
         public void ExploreRoom()
         {
             hiddenScenario.TriggerHiddenScenario(Player);
-            SolvePuzzle(new FindKeyPuzzle());
+            currentRoom.SearchRoom();
         }
 
         public void SaveGame()
@@ -128,22 +128,7 @@ namespace hospital_escape
                         break;
                 }
             }
-
-            // Additional cleanup or closing logic if needed
             Console.WriteLine("Exiting the game...");
-        }
-
-        private void SolvePuzzle(Puzzle puzzle)
-        {
-            bool puzzleSolved = puzzle.Solve(Player);
-            if (puzzleSolved)
-            {
-                Console.WriteLine("You have solved the puzzle!");
-            }
-            else
-            {
-                Console.WriteLine("You failed to solve the puzzle.");
-            }
         }
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System;
-using hospital_escape;
 
 namespace hospital_escape
 {
     public class HospitalRoom : Room
     {
         private Delay delayPrint = new Delay();
+        private Puzzle puzzle;
 
         public HospitalRoom(Game game) : base(game, hasKey: true)
         {
@@ -39,7 +39,19 @@ namespace hospital_escape
 
         public override void SearchRoom()
         {
-            base.SearchRoom(); // Use the base class method which includes puzzle solving logic
+            if (hasKey)
+            {
+                bool solved = puzzle.Solve(game.Player);
+                if (solved)
+                {
+                    hasKey = false; // Key is taken
+                    game.Player.HasKey = true;
+                }
+            }
+            else
+            {
+                Console.WriteLine("You search the room but find nothing of interest.");
+            }
             if (game.Player.HasKey)
             {
                 game.ChangeRoom(new Hallway(game)); // Move to the next room if the key is found
