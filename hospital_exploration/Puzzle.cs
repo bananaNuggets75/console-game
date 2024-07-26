@@ -1,4 +1,6 @@
-﻿namespace hospital_escape
+﻿using System;
+
+namespace hospital_escape
 {
     public abstract class Puzzle
     {
@@ -7,19 +9,22 @@
 
     public class FindKeyPuzzle : Puzzle
     {
+        private Delay delayPrint = new Delay();
+
         public override bool Solve(Player player)
         {
-            Console.WriteLine("You see a key hidden in the corner of the room. Do you pick it up? (yes/no)");
-            string input = Console.ReadLine()?.ToLower() ?? "";
-            if (input == "yes")
+            delayPrint.PrintWithDelay("You need to solve a puzzle to find the key. Answer the question correctly.\n", 70);
+            Console.WriteLine("What has keys but can't open locks?");
+            string answer = Console.ReadLine()?.ToLower();
+
+            if (answer == "piano")
             {
-                player.AddItem("Key");
-                Console.WriteLine("You picked up the key!");
+                delayPrint.PrintWithDelay("Correct! You found the key!\n", 70);
                 return true;
             }
             else
             {
-                Console.WriteLine("You decided not to pick up the key.");
+                delayPrint.PrintWithDelay("Incorrect! Try searching the room again.\n", 70);
                 return false;
             }
         }
