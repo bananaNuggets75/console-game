@@ -19,19 +19,51 @@ namespace hospital_escape
 
         public void Start()
         {
-            LoadGame(); // Attempt to load a previous save
+            LoadGame();
 
-            delayPrint.PrintWithDelay("Welcome to Hospital Escape! \n", 70);
-            delayPrint.PrintWithDelay("You wake up in the hospital with absolutely no memory of who you are or what happened. \n", 50);
-
-            currentRoom = new HospitalRoom(this);
-            currentRoom.Enter();
-
-            if (Player.HasKey)
+            bool playAgain;
+            do
             {
-                currentRoom = new HiddenKeyRoom(this);
+                delayPrint.PrintWithDelay("Welcome to Hospital Escape! \n", 70);
+                delayPrint.PrintWithDelay("You wake up in the hospital with absolutely no memory of who you are or what happened. \n", 50);
+
+                currentRoom = new HospitalRoom(this);
                 currentRoom.Enter();
-            }
+
+                if (Player.HasKey)
+                {
+                    currentRoom = new HiddenKeyRoom(this);
+                    currentRoom.Enter();
+                }
+
+                Console.WriteLine("What do you want to do?");
+                Console.WriteLine("1. Go back to sleep");
+                Console.WriteLine("2. Explore");
+                Console.WriteLine("3. Save and exit");
+
+                string playAgainChoice = Console.ReadLine();
+
+                switch (playAgainChoice)
+                {
+                    case "1":
+                        playAgain = true;
+                        break;
+                    case "2":
+                        playAgain = false;
+                        break;
+                    case "3":
+                        SaveGame();
+                        playAgain = false;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input. Please enter '1', '2', or '3'.");
+                        playAgain = false;
+                        break;
+                }
+
+            } while (playAgain);
+
+            delayPrint.PrintWithDelay("Thanks for playing!", 60);
         }
 
         public void ChangeRoom(Room newRoom)
@@ -43,7 +75,6 @@ namespace hospital_escape
         public void ExploreRoom()
         {
             hiddenScenario.TriggerHiddenScenario(Player);
-            currentRoom.SearchRoom();
         }
 
         public void SaveGame()
@@ -79,56 +110,6 @@ namespace hospital_escape
             {
                 Console.WriteLine($"Error loading game: {ex.Message}");
             }
-        }
-
-        private bool ShouldSaveGame()
-        {
-            Console.WriteLine("Press 'S' to save the game or any other key to continue.");
-            ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: true);
-            return keyInfo.Key == ConsoleKey.S;
-        }
-
-        // Main game loop
-        public void Play()
-        {
-            while (true)
-            {
-                Console.WriteLine("\nWhat do you want to do?");
-                Console.WriteLine("1. Go back to sleep");
-                Console.WriteLine("2. Explore");
-                Console.WriteLine("3. Save and exit");
-                Console.WriteLine("4. Show Inventory");
-
-                string input = Console.ReadLine();
-
-                switch (input)
-                {
-                    case "1":
-                        delayPrint.PrintWithDelay("You decide to go back to sleep. Maybe this is all just a dream...\n", 50);
-                        return; // End the game loop
-
-                    case "2":
-                        ExploreRoom();
-                        break;
-
-                    case "3":
-                        if (ShouldSaveGame())
-                        {
-                            SaveGame();
-                            return; // Exit the game loop after saving
-                        }
-                        break;
-
-                    case "4":
-                        Player.ShowInventory();
-                        break;
-
-                    default:
-                        Console.WriteLine("Invalid choice. Please select a valid option.");
-                        break;
-                }
-            }
-            Console.WriteLine("Exiting the game...");
         }
     }
 }

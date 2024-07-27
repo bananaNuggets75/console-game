@@ -2,29 +2,26 @@
 
 namespace hospital_escape
 {
-    public abstract class Puzzle
+    public interface Puzzle
     {
-        public abstract bool Solve(Player player);
+        bool Solve(Player player);
     }
 
     public class FindKeyPuzzle : Puzzle
     {
-        private Delay delayPrint = new Delay();
-
-        public override bool Solve(Player player)
+        public bool Solve(Player player)
         {
-            delayPrint.PrintWithDelay("You need to solve a puzzle to find the key. Answer the question correctly.\n", 70);
-            Console.WriteLine("What has keys but can't open locks?");
-            string answer = Console.ReadLine()?.ToLower();
-
-            if (answer == "piano")
+            Console.WriteLine("You find a puzzle in the room. Solve it to find the key.");
+            Console.WriteLine("Here's a simple question: What is 2 + 2?");
+            string answer = Console.ReadLine();
+            if (answer == "4")
             {
-                delayPrint.PrintWithDelay("Correct! You found the key!\n", 70);
+                Console.WriteLine("Correct! You found the key.");
                 return true;
             }
             else
             {
-                delayPrint.PrintWithDelay("Incorrect! Try searching the room again.\n", 70);
+                Console.WriteLine("Incorrect. Try again later.");
                 return false;
             }
         }

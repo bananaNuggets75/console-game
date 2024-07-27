@@ -6,7 +6,6 @@ namespace hospital_escape
     {
         protected Game game;
         protected bool hasKey;
-        protected Puzzle puzzle;
 
         public Room(Game game, bool hasKey)
         {
@@ -18,32 +17,15 @@ namespace hospital_escape
 
         public virtual void SearchRoom()
         {
-            if (puzzle != null)
+            if (hasKey)
             {
-                bool puzzleSolved = puzzle.Solve(game.Player);
-                if (puzzleSolved && hasKey)
-                {
-                    Console.WriteLine("You find a key after solving the puzzle!");
-                    hasKey = false;
-                    game.Player.HasKey = true;
-                }
-                else
-                {
-                    Console.WriteLine("You didn't find anything useful.");
-                }
+                Console.WriteLine("You search the room and find a key hidden under the rug!");
+                hasKey = false;
+                game.Player.HasKey = true;
             }
             else
             {
-                if (hasKey)
-                {
-                    Console.WriteLine("You search the room and find a key hidden under the rug!");
-                    hasKey = false;
-                    game.Player.HasKey = true;
-                }
-                else
-                {
-                    Console.WriteLine("You search the room but find nothing of interest.");
-                }
+                Console.WriteLine("You search the room but find nothing of interest.");
             }
         }
     }

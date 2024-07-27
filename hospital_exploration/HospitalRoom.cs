@@ -9,7 +9,7 @@ namespace hospital_escape
 
         public HospitalRoom(Game game) : base(game, hasKey: true)
         {
-            puzzle = new FindKeyPuzzle(); // Assign a puzzle to the room
+            this.puzzle = new FindKeyPuzzle(); // Assign a puzzle to the room
         }
 
         public override void Enter()
