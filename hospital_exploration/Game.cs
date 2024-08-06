@@ -15,12 +15,17 @@ namespace hospital_escape
         public Game()
         {
             Player = new Player();
+            currentRoom = new HospitalRoom(this);
         }
 
         public void Start()
         {
             LoadGame();
+            Play();
+        }
 
+        public void Play()
+        {
             bool playAgain;
             do
             {
