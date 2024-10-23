@@ -14,9 +14,10 @@ namespace hospital_escape
 
         public override void Enter()
         {
-            delayPrint.PrintWithDelay("What do you do? \n", 70);
+            delayPrint.PrintWithDelay("You wake up in a hospital room. The faint sound of machines beeping fills the air.\n", 50);
+            delayPrint.PrintWithDelay("What do you want to do? \n", 70);
             Console.WriteLine("1. Go back to sleep");
-            Console.WriteLine("2. Explore");
+            Console.WriteLine("2. Explore the room");
 
             string choice = Console.ReadLine();
 
@@ -45,7 +46,8 @@ namespace hospital_escape
                 if (solved)
                 {
                     hasKey = false; // Key is taken
-                    game.Player.HasKey = true;
+                    game.Player.HasKey = true; // Player obtains the key
+                    delayPrint.PrintWithDelay("You found the key hidden under the bed!\n", 50);
                 }
             }
             else
