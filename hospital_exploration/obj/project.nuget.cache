@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "bU3ol88tquD4fvpLt4IvhI747C18pgj2z2/32tdCzDutfud04f/+kM7REDqomQFuER1/vPvkyXUGJ7npmvBn5w==",
+  "dgSpecHash": "pnR2UAgbAJFi92kWY7myC/A/1LJR15pS5J82E3Lviv5ywIwIj/tFW9HBlwF70cpUc2Sw4WhMwmdBj1242k3BbA==",
   "success": true,
   "projectFilePath": "/Users/banananuggets/Projects/console-game/hospital_exploration/hospital_escape.csproj",
   "expectedPackageFiles": [
-    "/Users/banananuggets/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+    "/Users/banananuggets/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/banananuggets/.nuget/packages/microsoft.netcore.app.ref/7.0.15/microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
+    "/Users/banananuggets/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.15/microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
+    "/Users/banananuggets/.nuget/packages/microsoft.netcore.app.host.osx-arm64/7.0.15/microsoft.netcore.app.host.osx-arm64.7.0.15.nupkg.sha512"
   ],
   "logs": []
 }
